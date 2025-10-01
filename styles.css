@@ -1,0 +1,505 @@
+﻿<!--
+
+FILE: styles.css -->
+/* =Theme Name: Pocket Lint (Indie) — WordPress‑ish
+   Description: Playful, professional, inspirational & silly (self‑deprecating)
+   Author: You
+   Version: 1.0.0
+==================================================== */
+:root {
+    --bg: #0f1221;
+    --card: #171b2f;
+    --ink: #e8ecff;
+    --muted: #b8c0ff;
+    --accent: #ff8f6b; /* salmon‑orange */
+    --accent-ink: #351e17;
+    --outline: rgba(255,255,255,0.18);
+    --link: #a7d1ff;
+    --link-hover: #d9ebff;
+    --success: #57d39f;
+    --warn: #ffd875;
+    --shadow: 0 12px 30px rgba(0,0,0,0.35);
+    --radius: 14px;
+	--textonblue: #F1F0EA;
+}
+
+/* WordPress‑y typography & spacing */
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+    color: var(--ink);
+    background: radial-gradient(1200px 800px at 10% 0%, #131735 0%, var(--bg) 50%) fixed;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 28px)
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: saturate(140%) blur(8px);
+    background: rgba(10,12,24,.6);
+    border-bottom: 1px solid var(--outline)
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: var(--ink)
+}
+
+    .brand .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #ffd1c3);
+        box-shadow: var(--shadow)
+    }
+
+    .brand .title {
+        font-weight: 800;
+        letter-spacing: .2px
+    }
+
+.nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+    .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        padding: .6rem .9rem;
+        border-radius: 10px
+    }
+
+        .nav a:hover, .nav a:focus {
+            color: var(--ink);
+            background: rgba(255,255,255,.06);
+            outline: none
+        }
+
+    .nav .btn-support {
+        color: var(--accent-ink);
+        background: var(--accent);
+        border: 2px solid rgba(0,0,0,.12);
+        box-shadow: inset 0 -2px 0 rgba(0,0,0,.15), 0 6px 18px rgba(255,143,107,.25);
+        font-weight: 700;
+        border-radius: 999px
+    }
+
+        .nav .btn-support:focus {
+            outline: 3px solid #ffd9cd;
+            outline-offset: 2px
+        }
+
+.navwrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 28px;
+    align-items: center
+}
+
+    .hero .card {
+        background: var(--card);
+        border: 1px solid var(--outline);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow)
+    }
+
+    .hero h1 {
+        margin: .2em 0 .2em;
+        font-size: clamp(32px, 5vw, 54px);
+        letter-spacing: .3px
+    }
+
+    .hero p.lede {
+        color: var(--muted)
+    }
+
+.cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--ink);
+    background: linear-gradient(180deg, #D1F3FF, #596E76);
+    border: 1px solid var(--outline);
+    border-radius: 12px;
+    padding: .7rem 1rem
+}
+
+    .btn:hover {
+		background: linear-gradient(180deg, #C1E3EE, #495E66);
+    }
+
+.btn-primary {
+       background: linear-gradient(180deg, #b1b8da, #515682);
+       color: var(--textonblue);
+    border-color: #3a4277
+}
+
+    .btn-primary:hover {
+       background: linear-gradient(180deg, #c1c8ea, #212652);
+    }
+
+/* Home previews */
+.grid {
+    display: grid;
+    gap: 18px
+}
+
+    .grid.cols-3 {
+        grid-template-columns: repeat(3,1fr)
+    }
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius);
+    padding: 20px
+}
+
+    .card h3 {
+        margin-top: 0
+    }
+
+    .card .meta {
+        color: var(--muted);
+        font-size: .95em
+    }
+
+/* WP block vibes */
+.entry-content .alignwide {
+    max-width: 1200px
+}
+
+.wp-block-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px
+}
+
+.wp-block-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap
+}
+
+.wp-block-button__link {
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: .7rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid rgba(0,0,0,.1)
+}
+
+/* Creations list */
+.creations-list {
+    display: grid;
+    gap: 24px
+}
+
+.creation {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+    align-items: start;
+    background: rgba(255,255,255,.02);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius);
+    overflow: hidden
+}
+
+    .creation .thumb {
+        background: #0e1122
+    }
+
+        .creation .thumb img, .creation iframe {
+            display: block;
+            width: 100%;
+            height: auto
+        }
+
+    .creation .body {
+        padding: 18px
+    }
+
+    .creation .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap
+    }
+
+.tag {
+    display: inline-block;
+    font-size: .8rem;
+    color: #fff;
+    background: #344;
+    padding: .2rem .6rem;
+    border-radius: 999px;
+    border: 1px solid var(--outline)
+}
+
+/* Support page */
+.support-hero {
+    display: grid;
+    gap: 18px
+}
+
+.support-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px
+}
+
+.tile {
+    background: var(--card);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius);
+    padding: 18px;
+    text-align: center
+}
+
+    .tile a {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px dashed var(--outline);
+        border-radius: 12px;
+        padding: .6rem .9rem
+    }
+
+        .tile a:hover {
+            background: rgba(255,255,255,.05)
+        }
+
+    .tile svg {
+        width: 22px;
+        height: 22px
+    }
+
+    .tile.patreon {
+        border: 1px solid rgba(255,143,107,.4)
+    }
+
+    .tile.itchio {
+        border: 1px solid rgba(255, 102, 102, .4)
+    }
+
+    .tile.steam {
+        border: 1px solid rgba(167, 209, 255, .35)
+    }
+
+/* Footer */
+.site-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--outline);
+    color: var(--muted)
+}
+
+    .site-footer .grid {
+        grid-template-columns: 2fr 1fr 1fr
+    }
+
+.small {
+    font-size: .9em
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 1fr
+    }
+
+    .grid.cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .creation {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Focus rings */
+:where(a, button, input, textarea, select):focus {
+    outline: 2px solid var(--link);
+    outline-offset: 2px
+}
+
+/* Utility */
+.m0 {
+    margin: 0
+}
+
+.mt0 {
+    margin-top: 0
+}
+
+.mt1 {
+    margin-top: 8px
+}
+
+.mt2 {
+    margin-top: 16px
+}
+
+.mt3 {
+    margin-top: 24px
+}
+
+.mt4 {
+    margin-top: 32px
+}
+
+.center {
+    text-align: center
+}
+
+/* Cute flourish */
+.badge {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    background: rgba(255,255,255,.08);
+    border: 1px solid var(--outline);
+    padding: .3rem .6rem;
+    border-radius: 999px;
+    font-size: .85rem
+}
+
+    .badge .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 999px
+    }
+
+/* External link styles */
+.external {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem
+}
+
+    .external svg {
+        width: 14px;
+        height: 14px
+    }
+
+/* Contact form (non‑functional template) */
+form .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+    form .row.single {
+        grid-template-columns: 1fr
+    }
+
+label {
+    display: block;
+    font-weight: 600;
+    margin: .4rem 0
+}
+
+input, textarea {
+    width: 100%;
+    background: #0b0e1e;
+    color: var(--ink);
+    border: 1px solid var(--outline);
+    border-radius: 10px;
+    padding: .7rem .8rem
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical
+}
+
+button[type=submit] {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: 2px solid rgba(0,0,0,.15);
+    padding: .8rem 1rem;
+    border-radius: 12px;
+    font-weight: 700
+}
+
+/* WordPress‑y breadcrumbs placeholder */
+.breadcrumbs {
+    color: var(--muted);
+    font-size: .9em
+}
+
+/* Steam & Itch stylings */
+.link-itch {
+    background: linear-gradient(180deg, #ff8ea0, #ff6666);
+    color: #290d11;
+    border: none
+}
+
+.link-steam {
+    background: linear-gradient(180deg, #2a2f52, #1a2438);
+    color: #e8f2ff;
+    border: 1px solid #3a4277
+}
+
+/* Support button fun pulse (enhanced by JS but safe without) */
+.btn-support[data-boost] {
+    position: relative
+}
+
+    .btn-support[data-boost]::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 999px;
+        border: 2px solid rgba(255,143,107,.35);
+        opacity: .6
+    }
+	
+    .link-itch:hover {
+       background: linear-gradient(180deg, #df6e90, #df4646);
+    }
+
+
+/* "Looks like WordPress" details */
+header .site-title {
+    font-size: 1.1rem;
+    font-weight: 700
+}
+
+header .site-tagline {
+    font-size: .92rem;
+    color: var(--muted)
+}
